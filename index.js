@@ -1,13 +1,19 @@
 // implement your API here
 
+require("dotenv").config();
+
 const express = require('express');
 
 const db = require('./data/db.js');
 
-const port = 8000;
+const port = process.env.PORT || 8000;
 
 const server = express();
 server.use(express.json());
+
+server.get('/', (req, res) => {
+  res.status(200).send('working');
+})
 
 server.post('/api/posts', (req, res) => {
   const userInfo = req.body;
