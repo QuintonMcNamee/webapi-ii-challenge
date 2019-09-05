@@ -10,7 +10,7 @@ const server = express();
 server.use(express.json());
 
 server.get('/', (req, res) => {
-  res.status(200).json('working');
+  res.status(200).send('working');
 })
 
 server.post('/api/posts', (req, res) => {
